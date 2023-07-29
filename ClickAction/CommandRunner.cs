@@ -39,7 +39,7 @@ namespace ClickAction
             }
 
              
-            thread = new Thread(new ParameterizedThreadStart(ThreadRun));
+            thread = new Thread(new ParameterizedThreadStart(RunTaskInThread));
             thread.Start(cmdDatas);
             
         }
@@ -83,7 +83,7 @@ namespace ClickAction
             thread = null;
         }
 
-        public void ThreadRun(object args)
+        public void RunTaskInThread(object args)
         {
             List<ActionItemData> actionItemDatas = args as List<ActionItemData>;
             foreach (ActionItemData cmdData in actionItemDatas)
